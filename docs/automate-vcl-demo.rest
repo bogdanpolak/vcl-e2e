@@ -1,0 +1,28 @@
+GET http://localhost:8080/health
+
+###
+GET http://localhost:8080/api/tree
+
+###
+GET http://localhost:8080/api/coverage
+
+###
+GET http://localhost:8080/api/control?name=edtItemName
+
+###
+POST http://localhost:8080/api/set-text
+content-type: application/json
+
+{ "name": "edtItemName", "text": "Lenovo ThinkPad T14 GEN 2i" }
+
+###
+POST http://localhost:8080/api/click
+content-type: application/json
+
+{ "name": "btnAddItem" }
+
+###
+POST http://localhost:8080/api/grid
+content-type: application/json
+
+{"name": "DBGrid1", "action": "next"}
