@@ -23,7 +23,13 @@ vcl-e2e/
 │   └── tests/                 # Testy jednostkowe DUnitX dla CLI
 │       ├── clitests.dpr / .dproj
 │       └── TestVclE2EClient.pas
+├── python/                    # Skrypty testowe i SDK w języku Python 3
+│   ├── vcl_client.py          # Klient REST API (zero zależności, czysty Python)
+│   ├── test_e2e.py            # Scenariusze E2E (kompatybilne z unittest i pytest)
+│   ├── run_tests.py           # Samodzielny runner z raportem w konsoli
+│   └── README.md              # Przewodnik po testach w Pythonie
 ├── docs/                      # Dokumentacja projektu
+│   ├── index.html             # Kompletny dokument HTML z architekturą i scenariuszami
 │   ├── api.md                 # Specyfikacja endpointów REST API
 │   └── architecture.md        # Opis architektury, synchronizacji i coverage
 ├── VclE2E.groupproj           # Grupa projektowa RAD Studio (otwiera wszystko w IDE)
@@ -70,6 +76,22 @@ Uruchamia 5 testów jednostkowych DUnitX weryfikujących parsowanie drzewa JSON,
    ```cmd
    bin\cli.exe --run-all
    ```
+
+---
+
+### 4. Alternatywne uruchomienie testów w Pythonie
+
+Dzięki architekturze REST, testy można również uruchamiać w języku Python (bez konieczności instalowania zewnętrznych pakietów pip):
+
+```cmd
+cd python
+python run_tests.py
+```
+lub za pomocą standardowego modułu testowego:
+```cmd
+python -m unittest test_e2e.py
+```
+*(Więcej szczegółów w pliku [python/README.md](python/README.md))*
 
 ---
 

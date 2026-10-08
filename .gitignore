@@ -9,3 +9,7 @@ bin/
 __recovery/
 __history/
 dunitx-results.xml
+
+# Python
+__pycache__/
+*.pyc
