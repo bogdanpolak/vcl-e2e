@@ -1,0 +1,45 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C6E99908-1122-4D33-A445-F501E6AE1122}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="demo\DemoApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="cli\cli.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="cli\tests\clitests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DemoApp">
+        <MSBuild Projects="demo\DemoApp.dproj"/>
+    </Target>
+    <Target Name="cli">
+        <MSBuild Projects="cli\cli.dproj"/>
+    </Target>
+    <Target Name="clitests">
+        <MSBuild Projects="cli\tests\clitests.dproj"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DemoApp;cli;clitests"/>
+    </Target>
+    <Target Name="Clean">
+        <MSBuild Projects="demo\DemoApp.dproj" Targets="Clean"/>
+        <MSBuild Projects="cli\cli.dproj" Targets="Clean"/>
+        <MSBuild Projects="cli\tests\clitests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Make">
+        <MSBuild Projects="demo\DemoApp.dproj" Targets="Make"/>
+        <MSBuild Projects="cli\cli.dproj" Targets="Make"/>
+        <MSBuild Projects="cli\tests\clitests.dproj" Targets="Make"/>
+    </Target>
+</Project>

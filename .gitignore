@@ -1,0 +1,11 @@
+# Delphi temporary and binary outputs
+bin/
+*.dcu
+*.identcache
+*.local
+*.stat
+*.~*
+*.dsk
+__recovery/
+__history/
+dunitx-results.xml
